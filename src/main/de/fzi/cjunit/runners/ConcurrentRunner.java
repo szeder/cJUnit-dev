@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.junit.internal.runners.model.ReflectiveCallable;
 import org.junit.internal.runners.statements.Fail;
+import org.junit.runner.notification.RunNotifier;
 import org.junit.runners.BlockJUnit4ClassRunner;
 import org.junit.runners.model.FrameworkMethod;
 import org.junit.runners.model.InitializationError;
@@ -161,6 +162,11 @@ public class ConcurrentRunner extends BlockJUnit4ClassRunner {
 					"concurrent tests is not allowed";
 			errors.add(new Exception(gripe));
 		}
+	}
+
+	@Override
+	protected void runChild(FrameworkMethod method, RunNotifier notifier) {
+		super.runChild(method, notifier);
 	}
 
 	@Override
