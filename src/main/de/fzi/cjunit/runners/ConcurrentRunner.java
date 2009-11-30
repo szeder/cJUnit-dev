@@ -28,6 +28,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import de.fzi.cjunit.ConcurrentTest;
+import de.fzi.cjunit.jpf.outside.JPFPrimer;
 import de.fzi.cjunit.runners.model.ConcurrentFrameworkMethod;
 import de.fzi.cjunit.runners.statements.ConcurrentStatement;
 
@@ -166,6 +167,7 @@ public class ConcurrentRunner extends BlockJUnit4ClassRunner {
 
 	@Override
 	protected void runChild(FrameworkMethod method, RunNotifier notifier) {
+		JPFPrimer.prime();
 		super.runChild(method, notifier);
 	}
 
