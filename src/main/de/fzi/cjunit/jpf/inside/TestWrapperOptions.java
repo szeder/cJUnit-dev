@@ -20,5 +20,5 @@ public class TestWrapperOptions {
 	public static final String AfterMethodOpt = "--aftermethod=";
 	public static final String ExpectedExceptionOpt = "--expectedexception=";
 
-	public static final String SubOptSeparator = ",";
+	public static final String SubOptSeparator = ":";
 }

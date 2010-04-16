@@ -79,7 +79,7 @@ public class ConcurrentStatementTest {
 				"de.fzi.cjunit.jpf.inside.TestWrapper"));
 		assertThat(args, hasItemInArray(
 				"--testclass=java.lang.String"));
-		assertThat(args, hasItemInArray("--test=method=toString,exception=de.fzi.cjunit.testutils.TestException"));
+		assertThat(args, hasItemInArray("--test=method=toString:exception=de.fzi.cjunit.testutils.TestException"));
 		assertThat(args, hasItemInArray("--beforemethod=hashCode"));
 		assertThat(args, hasItemInArray("--beforemethod=notify"));
 		assertThat(args, hasItemInArray("--aftermethod=notifyAll"));
@@ -99,8 +99,8 @@ public class ConcurrentStatementTest {
 
 		String[] args = statement.createJPFArgs();
 
-		assertThat(args, hasItemInArray("--test=method=toString,exception="));
-		assertThat(args, hasItemInArray("--test=method=hashCode,exception=de.fzi.cjunit.testutils.TestException"));
+		assertThat(args, hasItemInArray("--test=method=toString:exception="));
+		assertThat(args, hasItemInArray("--test=method=hashCode:exception=de.fzi.cjunit.testutils.TestException"));
 	}
 
 	// This also covers the case when the same exception is thrown in the
