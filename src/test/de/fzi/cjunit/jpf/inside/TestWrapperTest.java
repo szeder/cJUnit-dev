@@ -79,9 +79,9 @@ public class TestWrapperTest {
 	@Test
 	public void parseArgsTest() {
 		TestWrapper tw = new TestWrapper(new String[] {
-				TestOpt + MethodSubOpt + methodName + ","
+				TestOpt + MethodSubOpt + methodName + SubOptSeparator
 					+ ExceptionSubOpt + exceptionName,
-				TestOpt + MethodSubOpt + methodName2 + ","
+				TestOpt + MethodSubOpt + methodName2 + SubOptSeparator
 					+ ExceptionSubOpt + exceptionName2
 				});
 		assertThat("test method list size", tw.testMethods.size(),

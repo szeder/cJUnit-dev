@@ -101,7 +101,7 @@ public class ConcurrentStatement extends Statement {
 		testArgs.add(TestClassOpt + target.getClass().getName());
 		for (MethodInfo mi : testMethods) {
 			testArgs.add(TestOpt + MethodSubOpt
-					+ mi.method.getName() + ","
+					+ mi.method.getName() + SubOptSeparator
 					+ ExceptionSubOpt
 					+ getExceptionClassName(mi.exception));
 		}

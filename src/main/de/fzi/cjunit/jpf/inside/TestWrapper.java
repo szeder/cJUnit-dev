@@ -72,7 +72,7 @@ public class TestWrapper {
 
 	protected void parseTestOpt(String arg) {
 		TestMethod tm = new TestMethod();
-		for (String subopt : arg.split(",")) {
+		for (String subopt : arg.split(SubOptSeparator)) {
 			if (subopt.startsWith(MethodSubOpt)) {
 				tm.setMethodName(
 						getRequiredArgumentValue(
