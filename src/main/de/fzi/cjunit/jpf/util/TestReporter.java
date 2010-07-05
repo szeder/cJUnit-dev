@@ -24,7 +24,7 @@ public class TestReporter extends Reporter {
 
 	List<Error> errors;
 
-	public TestReporter(Config conf, JPF jpf) throws Config.Exception {
+	public TestReporter(Config conf, JPF jpf) {
 		super(conf, jpf);
 		errors = new ArrayList<Error>(1);
 	}
