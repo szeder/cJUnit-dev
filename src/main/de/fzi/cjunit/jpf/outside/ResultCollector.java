@@ -172,6 +172,9 @@ public class ResultCollector implements TestProperty, SearchListener {
 	public void stateProcessed(Search search) {}
 
 	@Override
+	public void statePurged(Search search) {}
+
+	@Override
 	public void stateRestored(Search search) {}
 
 	@Override
