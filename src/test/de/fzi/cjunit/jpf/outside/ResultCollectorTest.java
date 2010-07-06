@@ -133,8 +133,8 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestErrorHandlers(
 						tfp, invocationCounter);
-		Error error = new Error(0, new PropertyListenerAdapter(), null,
-				null);
+		Error error = new Error(0, new PropertyListenerAdapter() {},
+				null, null);
 		Throwable exception = new TestException();
 		rc.handleFirstError(error, exception);
 		assertThat("error stored", rc.error, equalTo(error));
@@ -158,8 +158,8 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestErrorHandlers(
 						tfp, invocationCounter);
-		Error error = new Error(0, new PropertyListenerAdapter(), null,
-				null);
+		Error error = new Error(0, new PropertyListenerAdapter() {},
+				null, null);
 		Throwable exception = new TestException();
 		rc.handleFirstError(error, exception);
 		assertThat("error stored", rc.error, equalTo(error));
@@ -194,7 +194,7 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestErrorHandlers(
 						null, invocationCounter);
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.exception = new TestException();
 		Error error = new Error(0, new TestFailedProperty(), null,
@@ -210,7 +210,7 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestErrorHandlers(
 						null, invocationCounter);
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.exception = new TestException();
 		rc.handleFurtherError(rc.error, new OtherTestException());
@@ -224,7 +224,7 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestErrorHandlers(
 						null, invocationCounter);
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.exception = new TestException();
 		rc.handleFurtherError(rc.error, rc.exception);
@@ -240,7 +240,7 @@ public class ResultCollectorTest {
 		};
 		Throwable t = new TestException();
 		rc.exception = t;
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.foundConcurrencyBug();
 		assertThat("wrapped into ConcurrentError", rc.exception,
@@ -282,7 +282,7 @@ public class ResultCollectorTest {
 		MultipleFailureException mfe = new MultipleFailureException(
 				initFailures);
 		rc.exception = mfe;
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.foundConcurrencyBug();
 		assertThat("MFE unchanged", rc.exception,
@@ -315,7 +315,7 @@ public class ResultCollectorTest {
 		ResultCollector rc
 				= createResultCollectorToTestSearchFinished(
 						invocationCounter);
-		rc.error = new Error(0, new PropertyListenerAdapter(), null,
+		rc.error = new Error(0, new PropertyListenerAdapter() {}, null,
 				null);
 		rc.searchFinished(null);
 		assertThat("publishError() invoked once",
