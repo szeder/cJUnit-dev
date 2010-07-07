@@ -83,6 +83,8 @@ public class JPFInvoker {
 		conf.setProperty("jpf.report.console.start", "");
 		conf.setProperty("jpf.report.console.finished", "result");
 		conf.setProperty("jpf.report.console.show_steps", "true");
+		conf.setProperty("jpf.report.console.property_violation",
+				"error,trace,snapshot");
 	}
 
 	void createTestProperties() {
