@@ -73,17 +73,17 @@ public class JPFInvoker {
 
 		Class<? extends Publisher> publisherClass
 				= OnFailurePublisher.class;
-		conf.setProperty("jpf.report.publisher",
+		conf.setProperty("report.publisher",
 				publisherClass.getSimpleName());
-		conf.setProperty("jpf.report." + publisherClass.getSimpleName()
+		conf.setProperty("report." + publisherClass.getSimpleName()
 					+ ".class",
 				publisherClass.getName());
-		conf.setProperty("jpf.report.class",
+		conf.setProperty("report.class",
 				TestReporter.class.getName());
-		conf.setProperty("jpf.report.console.start", "");
-		conf.setProperty("jpf.report.console.finished", "result");
-		conf.setProperty("jpf.report.console.show_steps", "true");
-		conf.setProperty("jpf.report.console.property_violation",
+		conf.setProperty("report.console.start", "");
+		conf.setProperty("report.console.finished", "result");
+		conf.setProperty("report.console.show_steps", "true");
+		conf.setProperty("report.console.property_violation",
 				"error,trace,snapshot");
 	}
 
