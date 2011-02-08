@@ -82,9 +82,7 @@ public class SuccessfulTests {
 
 	@ConcurrentTest(threadGroup=TGID_Basic)
 	public void concurrentTestWithThreadGroup2() {
-		synchronized (this) {
-			counter.increment();
-		}
+		counter.increment();
 		TestBarrier.await();
 	}
 
