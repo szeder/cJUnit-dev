@@ -67,7 +67,21 @@ public class ConcurrentStatement extends Statement {
 
 	@Override
 	public void evaluate() throws Throwable {
-		invokeJPF();
+		long start = System.currentTimeMillis();
+		try {
+			invokeJPF();
+		} catch (Throwable t) {
+			throw t;
+		}
+		finally {
+			if (target != null) {
+				long elapsed = System.currentTimeMillis()-start;
+				System.out.println("$$$$ "
+					+ target.getClass().getName() + "."
+					+ testMethods.get(0).method.getName() + "(): "
+					+ elapsed + "s");
+			}
+		}
 	}
 
 	protected void invokeJPF() throws Throwable {
