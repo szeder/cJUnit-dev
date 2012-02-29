@@ -32,7 +32,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	de.fzi.cjunit.jpf.outside.TestFailedPropertyTest.class,
 	de.fzi.cjunit.jpf.util.ExceptionComparatorTest.class,
 	de.fzi.cjunit.jpf.util.StackFrameConverterTest.class,
-	de.fzi.cjunit.jpf.util.ExceptionFactoryTest.class
+	de.fzi.cjunit.jpf.util.ExceptionFactoryTest.class,
+	de.fzi.cjunit.util.TestTestThread.class
 })
 public class BaseTests {
 }
